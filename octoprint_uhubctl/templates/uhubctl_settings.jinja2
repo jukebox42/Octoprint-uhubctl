@@ -1,0 +1,54 @@
+<form class="form-horizontal">
+  <h2>{{ _("uhubctl") }}</h2>
+
+  <p>This plugin requires you to have a supported usbhub (hint rasberryPi is not) to install <a href="https://github.com/mvp/uhubctl" target="_blank">uhubctl</a> and set up <a href="https://github.com/mvp/uhubctl#linux-usb-permissions">usb permissions</a> before it will work. Be prepared for some debugging.</p>
+
+  <div class="control-group">
+    <label class="control-label">{{ _("Path") }}</label>
+    <div class="controls">
+      <div class="input">
+        <input type="text" class="input-block-level" data-bind="value: settings.plugins.uhubctl.path">
+      </div>
+      <span class="help-block">{{ _("This is the path you installed uhubctl at (include the uhubctl folder).") }}</span>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">{{ _("Hub") }}</label>
+    <div class="controls">
+      <div class="input">
+        <input type="text" class="input-block-level" data-bind="value: settings.plugins.uhubctl.hub">
+      </div>
+      <span class="help-block">{{ _("This is the hub(location) to toggle.") }}</span>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">{{ _("Port") }}</label>
+    <div class="controls">
+      <div class="input">
+        <input type="number" min="0" pattern="[0-9]+" class="input-mini input-block-level" data-bind="value: settings.plugins.uhubctl.port">
+      </div>
+      <span class="help-block">{{ _("This is the port that will be manipulated by the plugin.") }}</span>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox" data-bind="checked: settings.plugins.uhubctl.automatic" />
+        {{ _("Have lights turn on/off when print starts/stops") }}
+      </label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox">
+        <input type="checkbox" data-bind="checked: settings.plugins.uhubctl.debug" />
+        {{ _("Debug") }}
+      </label>
+      <span class="help-block">{{ _("Warning: Enabling debug will make this plugin noisy in logs and devtools. May also slow down your print.") }}</span>
+    </div>
+  </div>
+</form>

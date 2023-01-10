@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_uhubctl/templates *
+recursive-include octoprint_uhubctl/translations *
+recursive-include octoprint_uhubctl/static *
